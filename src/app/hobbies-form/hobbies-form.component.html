@@ -1,0 +1,59 @@
+<div [formGroup]="hobiesForm">
+  <div>
+    <label for="name">Name : </label>
+    <input pInputText type="text" name="name" formControlName="name" />
+  </div>
+  <div>
+    <label for="waterSports">Water Sports : </label>
+    <input
+      pInputText
+      type="text"
+      name="waterSports"
+      formControlName="waterSports"
+    />
+    &nbsp;
+
+    <button
+      pButton
+      label="Open Water Sports Table"
+      (click)="dataTable.showDialog('water')"
+    ></button>
+  </div>
+  <div>
+    <label>Land Sports : </label>
+    <input
+      pInputText
+      type="text"
+      name="landSports"
+      formControlName="landSports"
+    />
+    &nbsp;
+
+    <button
+      pButton
+      label="Open Land Sports Table"
+      (click)="dataTable.showDialog('land')"
+    ></button>
+  </div>
+  <div>
+    <label>Air Sports : </label>
+    <input
+      pInputText
+      type="text"
+      name="airSports"
+      formControlName="airSports"
+    />
+    &nbsp;
+    <button
+      pButton
+      label="Open Air Sports Table"
+      (click)="dataTable.showDialog('air')"
+    ></button>
+  </div>
+
+  <button pButton label="Submit Form" (click)="submitForm()"></button>
+</div>
+
+<app-data-table #dataTable (sendHobbie)="catchHobbie($event)"></app-data-table>
+
+<app-display-data [profile]="profile"></app-display-data>

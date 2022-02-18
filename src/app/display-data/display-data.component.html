@@ -1,0 +1,18 @@
+<ng-container *ngIf="profile; else notFound">
+  <div>
+    <label>Name : {{ profile.name }}</label>
+  </div>
+  <div>
+    <label>Water Sport : {{ profile.waterSports }}</label>
+  </div>
+  <div>
+    <label>Land Sport : {{ profile.landSports }}</label>
+  </div>
+  <div>
+    <label>Air Sport : {{ profile.airSports }}</label>
+  </div>
+</ng-container>
+
+<ng-template #notFound>
+  <label>Not Submitted Yet</label>
+</ng-template>

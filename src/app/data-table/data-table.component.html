@@ -1,0 +1,30 @@
+<p-dialog
+  [header]="dialogTitle"
+  [(visible)]="isDialogVisible"
+  [style]="{ width: '800px', minWidth: 350 }"
+  [modal]="true"
+>
+  <div>
+    <p-table
+      [value]="hobbies"
+      selectionMode="single"
+      [(selection)]="selectedHobbie"
+      (onRowSelect)="onRowSelect($event)"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let col of cols">
+            {{ col.header }}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of cols">
+            {{ rowData[col.field] }}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</p-dialog>
