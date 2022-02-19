@@ -21,31 +21,21 @@ export class HobbiesFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  catchHobbie(event) {
-    console.log(event.type);
+  public catchHobbie(event) {
     switch (event.type) {
       case 'Air Hobbie':
         this.hobiesForm.get('airSports').setValue(event.name);
-        console.log('air');
-        console.log(this.hobiesForm.value);
-
         break;
+
       case 'Water Hobbie':
         this.hobiesForm.get('waterSports').setValue(event.name);
-        console.log('water');
-        console.log(this.hobiesForm.value);
-
         break;
+
       case 'Land Hobbie':
         this.hobiesForm.get('landSports').setValue(event.name);
-        console.log('land');
-        console.log(this.hobiesForm.value);
-
         break;
 
       default:
-        console.log('default');
-
         break;
     }
   }
